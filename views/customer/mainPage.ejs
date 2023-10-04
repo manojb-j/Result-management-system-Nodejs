@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Bootstrap Page</title>
+    <!-- Link to Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Add your custom CSS if needed -->
+    <style>
+        /* Add your custom styles here */
+        .student-illustration {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Center content vertically and horizontally */
+        .center-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Adjust this value if needed */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <!-- First Grid: Buttons -->
+            <div class="col-md-6 center-content">
+                <div class="text-center">
+                    <a href="/login" class="btn btn-primary">Teacher</a>
+                    <!-- Link to Button 2's destination page or URL -->
+                    <a href="/loginStudent" class="btn btn-secondary">Student</a>
+                </div>
+            </div>
+            
+            <!-- Second Grid: Student Illustration -->
+            <div class="col-md-6 center-content mainlogin">
+                <div class="text-center">
+                    <img src="" alt="Student Illustration" class="student-illustration">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to Bootstrap JS and jQuery (for Bootstrap functionality) -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+</body>
+</html>

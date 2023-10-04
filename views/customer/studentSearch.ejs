@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Page</title>
+    <!-- Link to Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <!-- Link to FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    
+    <!-- Add your custom CSS for the background image and styles -->
+    <style>
+        /* Background image styles */
+        body {
+            background-image: url('https://i.pinimg.com/originals/87/6f/9c/876f9c5858d664d0efa0c476db65ef87.gif'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            height: 100vh;
+        }
+
+    
+        /* Search box styles */
+        .search-box {
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+        }
+
+        .center-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Adjust this value if needed */
+        }
+      
+    </style>
+</head>
+<body>
+        
+
+    <div class="container-fluid">
+        <div class="">
+            <div>
+                <br>
+                <% if (locals.errorMessage) { %>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <%= locals.errorMessage %>
+                    </div>
+                 <% } %>
+            </div>
+            <div class="center-content">
+                <div class="search-box text-center">
+                    <form action="/search" method="POST">
+                        <div id="emailHelp" class="form-text">Students can search there result by providing Roll.no and DOB</div>
+                        <br>
+                        <div class="mb-3">
+                          <input type="number" class="form-control" id="rollno" name="rollno" placeholder="Roll.no" required>
+                        </div>
+                        <div class="mb-3">
+                          <input type="date" class="form-control" id="dob" name="dob" placeholder="DOB" required>
+                        </div>
+                        <br>
+                        <div class="d-grid gap-2 col-8 mx-auto">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                        <br>
+                        <div class="d-grid gap-2 col-8 mx-auto">
+                            <a href="/">return to login</a>
+                        </div>
+                      </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Link to Bootstrap JS and jQuery (for Bootstrap functionality) -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+</body>
+</html>

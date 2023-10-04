@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>Login Page</title>
+    <style>
+        /* Custom CSS for the container */
+        .vertical-center {
+            height: 100vh;
+            /* 100% of viewport height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-border {
+            /* background-color: aqua; */
+            /* border: 1px solid black; */
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<div>
+    <br>
+    <% if (locals.errorMessage) { %>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <%= locals.errorMessage %>
+        </div>
+     <% } %>
+</div>
+<body class="bg-success-subtle">
+    <div class="container vertical-center ">
+        <div class="row d-flex justify-content-center align-items-center login-border bg-white">
+            <div class="col col-lg-4 justify-content-center align-items-center text-center ">
+                <h2 class="mb-lg-5">Login</h2>
+                <form action="/login" method="POST">
+                  
+                    <select  id="usertype" name="usertype">
+                        <option value="teacher">Teacher</option>
+                        <option value="student">Student</option>
+                    </select><br><br>
+                    <!-- <label for="username">Username:</label> -->
+                    <input class="form-control" type="text" id="username" name="username" placeholder="username" required><br>
+                    <!-- <label for="password">Password:</label> -->
+                    <input class="form-control"  type="password" id="password" name="password" placeholder="student" required><br><br>
+                    <!-- <label for="usertype">User Type:</label> -->
+                    <div class="d-grid gap-2 col-9 mx-auto">
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col col-lg-8 d-flex justify-content-center align-items-center border-start">
+                <img src="https://img.freepik.com/premium-vector/student-woman-with-laptop-studying-online-course-online-education-concept-vector-illustration-flat_186332-1147.jpg"
+                    alt="Student Illustration" class="img-fluid" />
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

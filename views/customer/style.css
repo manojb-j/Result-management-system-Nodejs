@@ -1,0 +1,9 @@
+.mainlogin{
+    background-image: url('student.png');
+    background-color: black;
+}
+
+.login-border{
+    background-color: aqua;
+    /* border: 2px solid black; */
+}

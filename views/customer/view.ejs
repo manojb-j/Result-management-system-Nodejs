@@ -1,0 +1,92 @@
+<% if (!customer) { %>
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <p>plase prvoide a valid input</p>
+  </div>
+  <% } else { %>
+<div class="d-flex justify-content-between flex-wrap flex-md nowrap align-items-center pt-3 pb-2 mb-3 border-bottom col col-lg-10 mx-auto mt-5">
+    <h1 class="h2">Student Name : <%= customer.name  %></h1>
+    <div class="btn-toolbar mb-2 mb-md 0">
+      <div class="btn-group me-2">
+        <a href="/search" class="btn btn-sm btn-outline-secondary">Search</a>
+      </div>
+    </div>
+  </div>
+ 
+
+  <div class="col py-3 col-lg-10 mx-auto mt-5">
+
+    <div class="row">
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">login</a></li>
+            <li class="breadcrumb-item active"><%= customer.name  %></li>
+          </ol>
+        </nav>
+      </div>
+      <div class="col text-end fw-lighter">
+        <b>Last Updated <%= new Date(customer.updatedAt).toUTCString() %> </b>
+        <b>UserId:</b> <%= customer._id %>
+      </div>
+    </div>
+  
+  </div>
+
+  <!-- <div id="alertMessage" class="alert alert-danger" style="display: none;">
+    <p><%= locals.alertMessage %></p>
+  </div> -->
+  
+  <ul class="list-group col col-lg-10 mx-auto mt-5">
+  
+    <li class="list-group-item"> 
+      <div class="row">
+        <div class="col" style="max-width: 140px"> <b>Name:</b></div>
+        <div class="col"><%= customer.name %></div>
+      </div>
+    </li>
+  
+    <li class="list-group-item"> 
+      <div class="row">
+        <div class="col" style="max-width: 140px"> <b>Roll.No:</b></div>
+        <div class="col"><%= customer.rollNo %></div>
+      </div>
+    </li>
+  
+    <li class="list-group-item"> 
+      <div class="row">
+        <div class="col" style="max-width: 140px"> <b>DOB:</b></div>
+        <div class="col"><%= customer.dob %></div>
+      </div>
+    </li>
+  
+    <li class="list-group-item"> 
+      <div class="row">
+        <div class="col" style="max-width: 140px"> <b>Scores:</b></div>
+        <div class="col"><%= customer.score %></div>
+      </div>
+    </li>
+  
+    <li class="list-group-item"> 
+      <div class="row">
+        <div class="col" style="max-width: 140px"> <b>Date Created:</b></div>
+        <div class="col"><%= customer.createdAt %></div>
+      </div>
+    </li>
+  
+    <li class="list-group-item"> 
+      <div class="row">
+        <div class="col" style="max-width: 140px"> <b>Date Modified:</b></div>
+        <div class="col"><%= customer.updatedAt %></div>
+      </div>
+    </li>
+  
+  </ul>
+
+  <!-- <script>
+    // Check if alertMessage has content and display it
+    const alertMessageElement = document.getElementById('alertMessage');
+    if (alertMessageElement.textContent.trim() !== '') {
+      alertMessageElement.style.display = 'block';
+    }
+  </script> -->
+  <% } %>
